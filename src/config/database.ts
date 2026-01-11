@@ -4,7 +4,7 @@ import { User } from "../models/user.model";
 export const sequelize = new Sequelize({
   dialect: "postgres",
   host: "localhost",
-  port: 5432,
+  port: 5433,
   username: "trading_user",       // change if needed
   password: "password123", // change if needed
   database: "trading_db",
