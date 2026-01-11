@@ -1,13 +1,14 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from "sequelize-typescript";
+import { User } from "../models/user.model";
 
-const sequelize = new Sequelize(
-  "trading_db",
-  "postgres",
-  "password",
-  {
-    host: "localhost",
-    dialect: "postgres",
-  }
-);
+export const sequelize = new Sequelize({
+  dialect: "postgres",
+  host: "localhost",
+  port: 5432,
+  username: "trading_user",       // change if needed
+  password: "password123", // change if needed
+  database: "trading_db",
 
-export default sequelize;
+  models: [User], // ✅ EXPLICIT MODEL REGISTRATION
+  logging: false
+});

@@ -1,6 +1,6 @@
-import { User } from "../models/User";
+import { User } from "../models/user.model";
 
-export const adminSeeder = async () => {
+export const adminSeeder = async (): Promise<void> => {
   const adminExists = await User.findOne({
     where: { role: "admin" }
   });
